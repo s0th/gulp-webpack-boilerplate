@@ -26,6 +26,18 @@ To start using the boilerplate, first install all the dependencies and then run 
  $ npm start
  ```
 
+If npm install fails, you might need to  
+
+- install [Python 2](https://www.python.org/downloads/release/python-2714/ "Python 2 installers")
+- and [Windows 8.1 SDK](https://developer.microsoft.com/en-us/windows/downloads/windows-8-1-sdk "Windows 8.1 SDK")
+- change your npm configuration to match your VisualStudio version
+`npm config set msvs_version 2015 --global`
+- you will also need to add the Python27 installation folder `c:\Python27` to your `PATH` environment variable 
+- if you are missing the cl.exe during compilation, change your visual studio installer to add the following: 
+[Common Tools For Visual Studio C++ 2015](http://prntscr.com/hyht76) or get the 
+[standalone c/c++ compiler](https://blogs.msdn.microsoft.com/vcblog/2015/11/02/announcing-visual-c-build-tools-2015-standalone-c-tools-for-build-environments/)
+- then add `c:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin` to your `PATH` environment variable
+
 ## Npm Tasks
 
 ###### Bundle Tasks
