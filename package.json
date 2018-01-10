@@ -13,10 +13,10 @@
     "url": "https://github.com/antonsamper/gulp-webpack-boilerplate/issues"
   },
   "scripts": {
-    "dev": "gulp",
-    "start": "gulp",
-    "prod": "gulp prod",
-    "test": "GULP_COVERAGE=true gulp karma",
+    "dev": "npm test && gulp",
+    "start": "npm test && gulp",
+    "prod": "npm test && gulp prod",
+    "test": "set GULP_COVERAGE=true && gulp karma",
     "release-patch": "release-it --non-interactive patch",
     "release-minor": "release-it --non-interactive minor",
     "release-major": "release-it --non-interactive major"
