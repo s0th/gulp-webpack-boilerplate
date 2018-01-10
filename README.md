@@ -67,7 +67,7 @@ Task Name         | Description
 `gulp svg`        | Combine svgs into a <symbol> element with paths
 `gulp imagemin`   | Minify images and svg files
 `gulp karma`      | Run unit tests
-~~`gulp minifyHtml`~~ | ~~Inject assets into and compress the main index.html~~
+`gulp minifyHtml` | Inject assets into and compress the main index.html
 `gulp move`       | Move source files to output directory
 `gulp server`     | Initialise a local server
 `gulp styles`     | Compile Sass to CSS

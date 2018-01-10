@@ -26,7 +26,7 @@ export default () => {
         'clean',
         'styles',
         'webpack',
-        ['minifyHtml', 'imagemin'],
+        [/*'minifyHtml', */'imagemin'],
         'move'
     );
 
