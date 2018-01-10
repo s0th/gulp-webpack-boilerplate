@@ -37,6 +37,7 @@ If npm install fails, you might need to
 [Common Tools For Visual Studio C++ 2015](http://prntscr.com/hyht76) or get the 
 [standalone c/c++ compiler](https://blogs.msdn.microsoft.com/vcblog/2015/11/02/announcing-visual-c-build-tools-2015-standalone-c-tools-for-build-environments/)
 - then add `c:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin` to your `PATH` environment variable
+- if `gulp imagemin` fails, run `npm install` in `node_modules\gulp-imagemin\` 
 
 ## Npm Tasks
 
