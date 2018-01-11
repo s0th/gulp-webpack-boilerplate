@@ -11,6 +11,7 @@
 var sharedPaths = require('../shared/paths.js');
 var path = require('path');
 
+import webpackConfig from './webpack.conf';
 
 /*********************************************************************************
  2. TASK
@@ -22,9 +23,6 @@ module.exports = config => {
     const basePath = `${__dirname}/../..`;
     const testFiles = `${sharedPaths.scriptsSrcDir}/**/*.spec.js`;
 
-    // Optional add coverage
-    if (process.env.GULP_COVERAGE) reporters.push('coverage');
-
     config.set({
         singleRun: true,
         basePath: basePath,
@@ -35,45 +33,13 @@ module.exports = config => {
         preprocessors: {
             [testFiles]: ['webpack']
         },
-        webpack: {
-            module: {
-                preLoaders: [{
-                    test: /\.js$/,
-                    include: path.resolve(sharedPaths.scriptsSrcDir),
-                    exclude: /\.spec\.js$/,
-                    loader: 'isparta'
-                }, {
-                    test: /\.js$/,
-                    exclude: /(node_modules)/,
-                    loader: 'eslint'
-                }],
-                loaders: [{
-                    test: /\.js$/,
-                    exclude: /(node_modules)/,
-                    loader: ['babel'],
-                    query: {
-                        presets: ['es2015']
-                    }
-                }]
-            }
-        },
+        webpack: webpackConfig,
         webpackMiddleware: {
             stats: {
                 colors: true
             },
             noInfo: true
         },
-        reporters: reporters,
-        coverageReporter: {
-            reporters: [{
-                type: 'html',
-                dir: `${sharedPaths.outputDir}/reports/coverage/`,
-                subdir: browser => {
-                    return browser.toLowerCase().split(/[ /-]/)[0];
-                }
-            }, {
-                type: 'text-summary'
-            }]
-        }
+        reporters: reporters
     });
 };

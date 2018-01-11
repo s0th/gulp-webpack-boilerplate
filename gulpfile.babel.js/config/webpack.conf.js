@@ -27,11 +27,7 @@ export default (() => {
             filename: '[name].js'
         },
         module: {
-            preLoaders: [{
-                test: /\.js$/,
-                exclude: /(node_modules)/,
-                loader: 'eslint'
-            }],
+            preLoaders: [],
             loaders: [{
                 test: /\.js$/,
                 exclude: /(node_modules)/,
