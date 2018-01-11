@@ -30,7 +30,20 @@ export default (() => {
             extensions: ['', '.ts']
         },        
         module: {
-            preLoaders: [],
+            preLoaders: [
+                {
+                    test: /\.ts$/,
+                    enforce: 'pre',
+                    loader: 'tslint-loader',
+                    options: {
+                        project: 'tsconfig.json',
+                        configFile: 'tslint.json',
+                        emitErrors: true,
+                        failOnHint: true,
+                        typeCheck: true                        
+                    }
+                }
+            ],
             loaders: [
                 {
                     test: /\.ts$/,
@@ -38,7 +51,7 @@ export default (() => {
                 }
             ]
         },
-        plugins: []
+        plugins: [ ]
     };
 
     if (process.env.GULP_UGLIFY === 'true') {
