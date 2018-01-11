@@ -21,7 +21,7 @@ module.exports = config => {
 
     let reporters = ['spec'];
     const basePath = `${__dirname}/../..`;
-    const testFiles = `${sharedPaths.scriptsSrcDir}/**/*.spec.js`;
+    const testFiles = `${sharedPaths.scriptsSrcDir}/**/*.spec.ts`;
 
     config.set({
         singleRun: true,

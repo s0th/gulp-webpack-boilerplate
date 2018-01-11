@@ -28,11 +28,7 @@ export default (() => {
         },
         module: {
             preLoaders: [],
-            loaders: [{
-                test: /\.js$/,
-                exclude: /(node_modules)/,
-                loader: 'babel?presets[]=es2015'
-            }]
+            loaders: []
         },
         plugins: []
     };
