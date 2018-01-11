@@ -8,18 +8,14 @@
  1. DEPENDENCIES
  *********************************************************************************/
 
-import $ from 'jquery';
-import fibonacci from './components/fibonacci/fibonacci';
+import * as $ from 'jquery';
+import {Calculator} from './components/calculator/calculator';
 import helloWorld from './components/helloWorld/helloWorld';
 
-// helloWorld example
-console.log(helloWorld());
+console.log($("html head title").html());
 
-// fibonacci example
-for (let n of fibonacci) {
-    if (n > 10) break;
-    console.log(`fibonacci sequence number: ${n}`);
-}
+console.log(helloWorld(true));
+console.log(helloWorld(false));
 
-// jQuery selector sample
-console.log($('body'));
+console.log(Calculator.ping());
+console.log(Calculator.add(3,5));

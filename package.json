@@ -22,6 +22,7 @@
     "release-major": "release-it --non-interactive major"
   },
   "devDependencies": {
+    "@types/jasmine": "^2.8.3",
     "autoprefixer": "6.4.0",
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
@@ -41,11 +42,11 @@
     "gulp-sass": "2.3.2",
     "gulp-sourcemaps": "1.6.0",
     "gulp-svgstore": "6.0.0",
-    "jasmine-core": "2.5.0",
+    "jasmine-core": "^2.8.0",
     "karma": "1.2.0",
     "karma-chrome-launcher": "2.0.0",
     "karma-coverage": "1.1.1",
-    "karma-jasmine": "1.0.2",
+    "karma-jasmine": "^1.1.1",
     "karma-spec-reporter": "0.0.26",
     "karma-webpack": "1.8.0",
     "merge-stream": "1.0.0",

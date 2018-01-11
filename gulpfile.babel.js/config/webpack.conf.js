@@ -26,9 +26,17 @@ export default (() => {
         output: {
             filename: '[name].js'
         },
+        resolve: {
+            extensions: ['', '.ts']
+        },        
         module: {
             preLoaders: [],
-            loaders: []
+            loaders: [
+                {
+                    test: /\.ts$/,
+                    loader: 'ts-loader'
+                }
+            ]
         },
         plugins: []
     };

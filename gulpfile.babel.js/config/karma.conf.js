@@ -31,7 +31,7 @@ module.exports = config => {
         browsers: ['Chrome'],
         failOnEmptyTestSuite: false,
         preprocessors: {
-            [testFiles]: ['webpack']
+            [testFiles] : ['webpack']
         },
         webpack: webpackConfig,
         webpackMiddleware: {
@@ -40,6 +40,9 @@ module.exports = config => {
             },
             noInfo: true
         },
-        reporters: reporters
+        reporters: reporters,
+        mime: {
+            'text/x-typescript': ['ts']
+        }
     });
 };
