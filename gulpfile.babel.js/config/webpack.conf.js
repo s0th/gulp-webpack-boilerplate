@@ -22,36 +22,36 @@ export default (() => {
     const vendorChunkFilename = 'libs';
 
     let config = {
-        cache: true,
         output: {
             filename: '[name].js'
         },
         resolve: {
-            extensions: ['', '.ts']
+            extensions: ['.ts']
         },        
         module: {
-            preLoaders: [
+            rules: [
                 {
                     test: /\.ts$/,
-                    enforce: 'pre',
-                    loader: 'tslint-loader',
-                    options: {
-                        project: 'tsconfig.json',
-                        configFile: 'tslint.json',
-                        emitErrors: true,
-                        failOnHint: true,
-                        typeCheck: true                        
-                    }
-                }
-            ],
-            loaders: [
-                {
-                    test: /\.ts$/,
-                    loader: 'ts-loader'
+                    use: [
+                        {
+                            loader: 'tslint-loader',
+                            options: {
+                                enforce: 'pre',
+                                project: 'tsconfig.json',
+                                configFile: 'tslint.json',
+                                emitErrors: true,
+                                failOnHint: false,
+                                typeCheck: true                        
+                            }
+                        },
+                        {
+                            loader: 'ts-loader'                            
+                        }
+                    ]
                 }
             ]
         },
-        plugins: [ ]
+        plugins: []
     };
 
     if (process.env.GULP_UGLIFY === 'true') {
@@ -64,7 +64,7 @@ export default (() => {
 
     // Development extras
     if (process.env.GULP_WEBPACK_DEV === 'true') {
-        config.debug = true;
+        //config.debug = true;
         config.plugins.push(new webpack.optimize.CommonsChunkPlugin({
             name: `${vendorChunkFilename}`,
             minChunks: function (module, count) {
