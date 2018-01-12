@@ -27,7 +27,8 @@ export default () => {
     runSequence(
         'clean',
         'webpack',
-        'karma',        
+        'karma', 
+        'sassLint',
         'styles',
         /*['minifyHtml', 'imagemin'],*/
         'imagemin',
