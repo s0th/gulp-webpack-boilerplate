@@ -20,15 +20,15 @@ import runSequence from 'run-sequence';
 
 export default () => {
 
-    process.env.GULP_IGNORE_ERRORS = true;
-    process.env.GULP_CACHE = true;
-    process.env.GULP_SOURCEMAPS = true;
-    process.env.GULP_WEBPACK_DEV = true;
-
+    process.env.GULP_CACHE = 'true';
+    process.env.GULP_SOURCEMAPS = 'true';
+    process.env.GULP_WEBPACK_DEV = 'true';
+    
     runSequence(
         'clean',
-        'styles',
         'webpack',
+        'karma',        
+        'styles',
         /*['minifyHtml', 'imagemin'],*/
         'imagemin',
         'move',
@@ -37,7 +37,7 @@ export default () => {
 
     gulp.watch(sharedPaths.scriptsSrcFiles, ['webpack']);
     gulp.watch(sharedPaths.imagesSrcFiles, ['imagemin']);
-    gulp.watch([sharedPaths.srcIndex, sharedPaths.iconsSrcFiles], ['minifyHtml']);
+    //gulp.watch([sharedPaths.srcIndex, sharedPaths.iconsSrcFiles], ['minifyHtml']);
     gulp.watch(sharedPaths.fontsSrcFiles, ['move']);
     gulp.watch(sharedPaths.stylesAllSrcFiles, ['styles']);
 

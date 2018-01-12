@@ -18,14 +18,15 @@ import runSequence from 'run-sequence';
 
 export default () => {
 
-    process.env.GULP_CSSO = true;
-    process.env.GULP_HTMLMIN = true;
-    process.env.GULP_UGLIFY = true;
+    process.env.GULP_IGNORE_ERRORS = 'false';
+    process.env.GULP_CSSO = 'true';
+    process.env.GULP_HTMLMIN = 'true';
+    process.env.GULP_UGLIFY = 'true';
 
     runSequence(
         'clean',
-        'styles',
         'webpack',
+        'styles',
         /*['minifyHtml', 'imagemin'],*/
         'imagemin',
         'move'
