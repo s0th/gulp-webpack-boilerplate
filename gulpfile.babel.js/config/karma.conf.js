@@ -19,7 +19,7 @@ import webpackConfig from './webpack.conf';
 
 module.exports = config => {
 
-    let reporters = ['spec'];
+    let reporters = ['spec', 'kjhtml'];
     const basePath = `${__dirname}/../..`;
     const testFiles = `${sharedPaths.scriptsSrcDir}/**/*.spec.ts`;
     

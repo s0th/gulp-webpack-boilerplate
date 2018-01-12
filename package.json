@@ -47,6 +47,7 @@
     "karma-chrome-launcher": "^2.2.0",
     "karma-coverage": "^1.1.1",
     "karma-jasmine": "^1.1.1",
+    "karma-jasmine-html-reporter": "^0.2.2",
     "karma-spec-reporter": "0.0.32",
     "karma-webpack": "^2.0.9",
     "merge-stream": "^1.0.1",
