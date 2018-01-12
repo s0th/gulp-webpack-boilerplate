@@ -1,13 +1,18 @@
+<!--
 <p align="center">
     <img width="141" src="http://antonsamper.github.io/gulp-webpack-boilerplate/images/logo-gulp-webpack-pink-fed4617544.svg" />
 </p>
-#gulp.js + webpack boilerplate for single page apps
-A clean and simple front-end ES6 boilerplate for single page applications using gulp.js and webpack.
+-->
+# forked from: gulp.js + webpack boilerplate for single page apps
+A clean and simple front-end ~~ES6~~ TypeScript boilerplate for ~~single page applications~~ website using gulp.js, webpack and typescript.
 
+<!--
 [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/antonsamper/gulp-webpack-boilerplate/blob/master/LICENSE)
 [![Travis](https://img.shields.io/travis/antonsamper/gulp-webpack-boilerplate.svg)](https://travis-ci.org/antonsamper/gulp-webpack-boilerplate)
 [![devDependency Status](https://david-dm.org/antonsamper/gulp-webpack-boilerplate/dev-status.svg)](https://david-dm.org/antonsamper/gulp-webpack-boilerplate#info=devDependencies)
+-->
 
+<!--
 ## Boilerplate used by
 <p>
   <a href="http://signagerocket.com/">
@@ -17,6 +22,7 @@ A clean and simple front-end ES6 boilerplate for single page applications using 
     <img height="100" width="100" src="https://raw.githubusercontent.com/antonsamper/gulp-webpack-boilerplate/master/src/images/logo-nowtv.png">
   </a>
 </p>
+-->
 
 ## Installation and Usage
 To start using the boilerplate, first install all the dependencies and then run one of the gulp tasks, for example:
@@ -67,7 +73,7 @@ Task Name         | Description
 `gulp svg`        | Combine svgs into a <symbol> element with paths
 `gulp imagemin`   | Minify images and svg files
 `gulp karma`      | Run unit tests
-`gulp minifyHtml` | Inject assets into and compress the main index.html
+`~~gulp minifyHtml~~` | ~~Inject assets into and compress the main index.html~~
 `gulp move`       | Move source files to output directory
 `gulp server`     | Initialise a local server
 `gulp styles`     | Compile Sass to CSS
@@ -105,6 +111,7 @@ src/
 |- index.html 
 ```
 
+<!--
 ### Fonts
 The `src/fonts/` folder should contain the self hosted fonts for the site. All the fonts directly inside this folder 
 will be copied to the `dist/x.x.x/fonts/` folder automatically.
@@ -166,3 +173,4 @@ to do is run any of the following:
  *  `npm run release-patch`
  *  `npm run release-minor`
  *  `npm run release-major`
+-->
