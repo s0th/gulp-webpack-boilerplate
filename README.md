@@ -3,8 +3,8 @@
     <img width="141" src="http://antonsamper.github.io/gulp-webpack-boilerplate/images/logo-gulp-webpack-pink-fed4617544.svg" />
 </p>
 -->
-# forked from: gulp.js + webpack boilerplate for single page apps
-A clean and simple front-end ~~ES6~~ TypeScript boilerplate for ~~single page applications~~ website using gulp.js, webpack and typescript.
+# <i>forked from:</i> gulp.js + webpack boilerplate for single page apps
+A clean and simple front-end ~~ES6~~ TypeScript boilerplate for ~~single page applications~~ websites using gulp.js, webpack and typescript.
 
 <!--
 [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/antonsamper/gulp-webpack-boilerplate/blob/master/LICENSE)
