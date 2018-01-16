@@ -11,7 +11,7 @@
 var sharedPaths = require('../shared/paths.js');
 var path = require('path');
 
-import webpackConfig from './webpack.conf';
+import webpackKarmaConfig from './webpack.karma.conf';
 
 /*********************************************************************************
  2. TASK
@@ -33,14 +33,6 @@ module.exports = config => {
 
     const files = process.env.GULP_WEBPACK_DEV === 'true' ? filesDev : filesDefault;
 
-    // extending webpack config with sourcemapping support for code coverage
-    webpackConfig.module.rules.push({
-        test: /\.ts$/,
-        exclude: /(node_modules|\.spec\.ts$)/,
-        loader: 'sourcemap-istanbul-instrumenter-loader?force-sourcemap=true',
-        enforce: 'post'
-    });
-    
 
     config.set({
         singleRun: singleRun,
@@ -52,7 +44,7 @@ module.exports = config => {
         preprocessors: {
             [testFiles] : ['webpack', 'sourcemap']
         },
-        webpack: webpackConfig,
+        webpack: webpackKarmaConfig,
         webpackMiddleware: {
             stats: {
                 colors: true
@@ -65,7 +57,7 @@ module.exports = config => {
         },
         remapIstanbulReporter: {
           reports: {
-            html: 'coverage/html',
+            html: 'dist/coverage',
             'text-summary': null
           }
         }        
