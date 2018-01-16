@@ -18,7 +18,9 @@ import packagejson from '../../package.json';
 module.exports = function () {
 
     const srcDir = 'src';
-    const outputDir = `dist/${packagejson.version}`;
+//  disabling versioned release directories     
+//  const outputDir = `dist/${packagejson.version}`;
+    const outputDir = 'dist';
     const iconsFolderName = 'icons';
     const iconsSrcFiles = `${srcDir}/images/${iconsFolderName}/*.svg`;
     const scriptsMainFile = 'app.ts';
