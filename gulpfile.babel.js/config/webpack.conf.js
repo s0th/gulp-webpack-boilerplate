@@ -26,30 +26,28 @@ export default (() => {
             filename: '[name].js'
         },
         resolve: {
-            extensions: ['.ts']
+            extensions: ['.ts', '.js']
         },        
         module: {
             rules: [
                 {
+                    test: /\.ts$/,  
+                        loader: 'tslint-loader',
+                        options: {
+                            enforce: 'pre',
+                            project: 'tsconfig.json',
+                            configFile: 'tslint.json',
+                            emitErrors: true,
+                            failOnHint: false,
+                            typeCheck: true                        
+                        }                                    
+                },
+                {
                     test: /\.ts$/,
-                    use: [
-                        {
-                            loader: 'tslint-loader',
-                            options: {
-                                enforce: 'pre',
-                                project: 'tsconfig.json',
-                                configFile: 'tslint.json',
-                                emitErrors: true,
-                                failOnHint: false,
-                                typeCheck: true                        
-                            }
-                        },
-                        {
-                            loader: 'ts-loader'                            
-                        }
-                    ]
+                    loader: 'ts-loader',
+                    exclude: /node_modules/
                 }
-            ]
+            ]            
         },
         plugins: []
     };
@@ -72,6 +70,8 @@ export default (() => {
             }
         }));
         config.plugins.push(new webpack.SourceMapDevToolPlugin({
+            filename: null,
+            test: /\.(ts|js)($|\?)/i,
             exclude: `${vendorChunkFilename}.js`
         }));
     }

@@ -19,7 +19,7 @@ import webpackConfig from './webpack.conf';
 
 module.exports = config => {
 
-    let reporters = ['spec', 'kjhtml'];
+    let reporters = ['spec', 'kjhtml', 'karma-remap-istanbul'];
     const basePath = `${__dirname}/../..`;
     const testFiles = `${sharedPaths.scriptsSrcDir}/**/*.spec.ts`;
     
@@ -33,6 +33,14 @@ module.exports = config => {
 
     const files = process.env.GULP_WEBPACK_DEV === 'true' ? filesDev : filesDefault;
 
+    // extending webpack config with sourcemapping support for code coverage
+    webpackConfig.module.rules.push({
+        test: /\.ts$/,
+        exclude: /(node_modules|\.spec\.ts$)/,
+        loader: 'sourcemap-istanbul-instrumenter-loader?force-sourcemap=true',
+        enforce: 'post'
+    });
+    
 
     config.set({
         singleRun: singleRun,
@@ -42,7 +50,7 @@ module.exports = config => {
         browsers: ['Chrome'],
         failOnEmptyTestSuite: false,
         preprocessors: {
-            [testFiles] : ['webpack']
+            [testFiles] : ['webpack', 'sourcemap']
         },
         webpack: webpackConfig,
         webpackMiddleware: {
@@ -54,6 +62,12 @@ module.exports = config => {
         reporters: reporters,
         mime: {
             'text/x-typescript': ['ts']
-        }
+        },
+        remapIstanbulReporter: {
+          reports: {
+            html: 'coverage/html',
+            'text-summary': null
+          }
+        }        
     });
 };

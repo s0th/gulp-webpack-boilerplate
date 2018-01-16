@@ -14,12 +14,12 @@ import helloWorld from "./components/helloWorld/helloWorld";
 // enable these to see if the application works on the frontend,
 // commented out to pass tslint validation
 
-/*
+/* tslint:disable */
 console.log($("html head title").html());
 
 console.log(helloWorld(true));
 console.log(helloWorld(false));
 
 console.log(Calculator.ping());
-console.log(Calculator.add(3,5));
-*/
+console.log(Calculator.add(3, 5));
+/* tslint:enable */
