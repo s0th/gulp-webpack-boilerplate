@@ -1,7 +1,21 @@
+/*
+ * @title Webpack.Parts
+ * @description DRY Webpack configuration file parts
+ */
+
+/*********************************************************************************
+ 1. DEPENDENCIES
+ *********************************************************************************/
+
 import sharedPaths from '../shared/paths.js';
 import path        from 'path';
 
 const vendorChunkFilename = 'libs';
+
+
+/*********************************************************************************
+ 2. FUNCTIONS
+ *********************************************************************************/
 
 const base = () => {
 	return {
@@ -75,6 +89,11 @@ const SourceMapDevToolPluginConf = () => {
 		exclude: `${vendorChunkFilename}.js`
 	};
 };
+
+
+/*********************************************************************************
+ 3. EXPORTS
+ *********************************************************************************/
 
 export default {
 	base, 
