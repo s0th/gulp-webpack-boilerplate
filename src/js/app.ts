@@ -22,4 +22,6 @@ console.log(helloWorld(false));
 
 console.log(Calculator.ping());
 console.log(Calculator.add(3, 5));
+
+$("#coverage")[0].click();
 /* tslint:enable */
